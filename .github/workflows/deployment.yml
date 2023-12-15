@@ -8,9 +8,6 @@ jobs:
       - name: Get code
         uses: actions/checkout@v4
 
-      - name: install nodeJS
-        uses: actions/setup-node@v4
-
       - name: install dependencies
         uses: npm ci
 
@@ -24,9 +21,6 @@ jobs:
       - name: Get code
         uses: actions/checkout@v4
 
-      - name: install nodeJS
-        uses: actions/setup-node@v4
-
       - name: install dependencies
         uses: npm ci
 
@@ -39,9 +33,6 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v4
-
-      - name: install nodeJS
-        uses: actions/setup-node@v4
 
       - name: install dependencies
         uses: npm ci
