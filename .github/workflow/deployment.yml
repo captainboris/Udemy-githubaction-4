@@ -1,0 +1,54 @@
+name: deployment workflow
+on: [push, workflow_dispatch]
+
+jobs: 
+  lint: 
+    runs-on: ubunte-latest
+    steps:
+      - name: Get code
+      - uses: actions/checkout@v4
+
+      - name: install nodeJS
+        uses: actions/setup-node@v4
+
+      - name: install dependencies
+        uses: npm ci
+
+      - name: run lint
+        run: npm lint
+  
+  test:
+   needs: lint
+    runs-on: ubunte-latest
+    steps:
+      - name: Get code
+      - uses: actions/checkout@v4
+
+      - name: install nodeJS
+        uses: actions/setup-node@v4
+
+      - name: install dependencies
+        uses: npm ci
+
+      - name: run test
+        run: npm test
+
+  deploy:
+    needs: test
+    runs-on: ubunte-latest
+    steps:
+      - name: Get code
+      - uses: actions/checkout@v4
+
+      - name: install nodeJS
+        uses: actions/setup-node@v4
+
+      - name: install dependencies
+        uses: npm ci
+
+      - name: run build
+        run: npm build
+
+      - name: run Deploy
+        echo: "test complete, deploying ..."
+
