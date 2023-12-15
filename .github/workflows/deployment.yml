@@ -1,6 +1,5 @@
 name: deployment workflow
-on: [push, workflow_dispatch]
-
+on: push
 jobs: 
   lint: 
     runs-on: ubuntu-latest
