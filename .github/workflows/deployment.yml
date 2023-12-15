@@ -15,7 +15,7 @@ jobs:
         uses: npm ci
 
       - name: run lint
-        run: npm lint
+        run: npm run lint
   
   test:
     needs: lint
@@ -31,7 +31,7 @@ jobs:
         uses: npm ci
 
       - name: run test
-        run: npm test
+        run: npm run test
 
   deploy:
     needs: test
@@ -47,7 +47,7 @@ jobs:
         uses: npm ci
 
       - name: run build
-        run: npm build
+        run: npm run build
 
       - name: run Deploy
         run: echo "test complete, deploying ..."
