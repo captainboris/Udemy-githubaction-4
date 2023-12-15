@@ -3,7 +3,7 @@ on: [push, workflow_dispatch]
 
 jobs: 
   lint: 
-    runs-on: ubunte-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Get code
       - uses: actions/checkout@v4
@@ -19,7 +19,7 @@ jobs:
   
   test:
    needs: lint
-    runs-on: ubunte-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Get code
       - uses: actions/checkout@v4
