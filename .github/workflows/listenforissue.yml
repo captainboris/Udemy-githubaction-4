@@ -2,7 +2,8 @@ name: reporting issues
 on: issues
 
 jobs: 
-  runs-on: Ubuntu-latest
-      steps:
+  output-info:
+    runs-on: Ubuntu-latest
+    steps:
       - name: output issue details
-      - echo: " ${{ onJSON(github.event)}}"  
+        run: " ${{ toJSON(github.event) }}"  

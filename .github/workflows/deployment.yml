@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Get code
-      - uses: actions/checkout@v4
+        uses: actions/checkout@v4
 
       - name: install nodeJS
         uses: actions/setup-node@v4
@@ -18,11 +18,11 @@ jobs:
         run: npm lint
   
   test:
-   needs: lint
+    needs: lint
     runs-on: ubuntu-latest
     steps:
       - name: Get code
-      - uses: actions/checkout@v4
+        uses: actions/checkout@v4
 
       - name: install nodeJS
         uses: actions/setup-node@v4
@@ -35,10 +35,10 @@ jobs:
 
   deploy:
     needs: test
-    runs-on: ubunte-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Get code
-      - uses: actions/checkout@v4
+        uses: actions/checkout@v4
 
       - name: install nodeJS
         uses: actions/setup-node@v4
@@ -50,5 +50,5 @@ jobs:
         run: npm build
 
       - name: run Deploy
-        echo: "test complete, deploying ..."
+        run: echo "test complete, deploying ..."
 
